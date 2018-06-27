@@ -1,0 +1,101 @@
+<!-- -->
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <strong>AVALIE</strong> me
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button tappable (click)="sair()">
+        <ion-icon name="md-exit"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="common-bg">
+  <!--slides-->
+  <ion-slides class="to-top" pager>
+    <ion-slide *ngFor="let image of trip.images">
+      <img [src]="image" alt="">
+    </ion-slide>
+  </ion-slides>
+
+  <!--services-->
+  <ion-grid class="border-bottom dark-bg">
+    <ion-row>
+      <ion-col text-center>
+        <div class="text-sm">
+          <div>
+            <ion-icon name="contact" class="text-white"></ion-icon>
+            <span ion-text color="light" *ngIf="trip.free_cancellation">João Lucas</span>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!--high light-->
+
+
+  <!--booking form-->
+  <div class="booking-form card round" margin>
+    <div class="border-bottom" padding>
+      <h5>Avaliador: Sergio</h5>
+
+      <!--choose guest-->
+      <ion-grid class="filters" no-padding margin-top>
+        <ion-row>
+          <p>11 N. Way St, Madison, WI 53703</p>
+        </ion-row>
+
+      </ion-grid>
+    </div>
+    <div padding class="form-bottom">
+      <ion-grid class="filters" >
+<!--       <span ion-text color="dark" class="bold">{{ adults }} Adults</span> -->
+<ion-row>
+<ion-col col-12>
+<div text-center class="center">12 pontos</div>
+</ion-col>
+
+
+</ion-row>
+</ion-grid>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+  <div class="booking-form card round" margin>
+    <div class="border-bottom" padding>
+      <h5>Avaliador: Sergio</h5>
+
+      <!--choose guest-->
+      <ion-grid class="filters" no-padding margin-top>
+        <ion-row>
+          <p>11 N. Way St, Madison, WI 53703</p>
+        </ion-row>
+
+      </ion-grid>
+    </div>
+    <div padding class="form-bottom">
+      <ion-grid class="filters" >
+<!--       <span ion-text color="dark" class="bold">{{ adults }} Adults</span> -->
+<ion-row>
+<ion-col col-12>
+<div text-center class="center">12 pontos</div>
+</ion-col>
+
+
+</ion-row>
+</ion-grid>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+  <!--description-->
+
+</ion-content>
