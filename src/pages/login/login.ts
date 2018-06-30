@@ -37,9 +37,6 @@ export class LoginPage {
 
   // login and go to home page
   login() {
-
-
-
    var url = "http://api.14mob.com/profissional/"+this.cpf+"/api"
    var headers = new HttpHeaders();
    headers.append('Access-Control-Allow-Origin' , '*');
@@ -51,25 +48,13 @@ export class LoginPage {
 
    this.profissional
    .subscribe(data => {
-
-
      this.profProv.save(data,this.cpf);
-
-
      var teste = this.profProv.getDados().then((arrayOfResults) => {
 
+       
        this.nav.setRoot(TripsPage);
-
      });
-
-
-
-
    })
-
-
-
-
   }
 
 

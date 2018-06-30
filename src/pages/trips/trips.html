@@ -19,17 +19,17 @@
 
  <h1 ion-text color="dark">Ranking da Equipe</h1>
   <!--list of trips-->
-  <div class="trip card" *ngFor="let trip of trips" tappable (click)="viewDetail(trip.id)" margin-bottom>
+  <div class="trip card" *ngFor="let scor of score" tappable  margin-bottom>
 
 
     <ion-list>
       <ion-item>
         <ion-avatar item-start>
-          <img src="../assets/img/avatar.jpeg">
+          <img src="{{scor.foto}}">
         </ion-avatar>
-        <h2>Cher</h2>
-        <p>Ugh. As if.</p>
-        <ion-badge item-end>260k</ion-badge>
+        <h2>{{scor.profissional}}</h2>
+        <p>{{scor.meta}}</p>
+        <ion-badge item-end>{{scor.pontos}}</ion-badge>
       </ion-item>
     </ion-list>
 
