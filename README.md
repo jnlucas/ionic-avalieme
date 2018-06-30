@@ -1,3 +1,4 @@
-# Ionic 3 Start Theme
+# avalie -me
 
-Ionic 3 Start Theme with 10 Pages, mock data, providers samples, Storage, Http and more...
+Para iniciar o projeto basta clonar este repositório e rodar o comando $ ionic serve
+para embarcar o projeto basta rodar o comando $ ionic cordova run android
