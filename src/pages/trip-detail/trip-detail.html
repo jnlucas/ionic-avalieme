@@ -7,11 +7,7 @@
     <ion-title>
       <strong>AVALIE</strong> me
     </ion-title>
-    <ion-buttons end>
-      <button ion-button tappable (click)="sair()">
-        <ion-icon name="md-exit"></ion-icon>
-      </button>
-    </ion-buttons>
+    
   </ion-navbar>
 </ion-header>
 
@@ -31,7 +27,7 @@
         <div class="text-sm">
           <div>
             <ion-icon name="contact" class="text-white"></ion-icon>
-            <span ion-text color="light" *ngIf="trip.free_cancellation">João Lucas</span>
+            <span ion-text color="light" >{{profissionalNome}}</span>
           </div>
         </div>
       </ion-col>
@@ -42,14 +38,14 @@
 
 
   <!--booking form-->
-  <div class="booking-form card round" margin>
+  <div class="booking-form card round" margin *ngFor="let avaliacao of avaliacoes">
     <div class="border-bottom" padding>
-      <h5>Avaliador: Sergio</h5>
+      <h5>Avaliador: {{avaliacao.superiorImediato}}</h5>
 
       <!--choose guest-->
       <ion-grid class="filters" no-padding margin-top>
         <ion-row>
-          <p>11 N. Way St, Madison, WI 53703</p>
+          <p>{{avaliacao.observacao}}</p>
         </ion-row>
 
       </ion-grid>
@@ -59,7 +55,7 @@
 <!--       <span ion-text color="dark" class="bold">{{ adults }} Adults</span> -->
 <ion-row>
 <ion-col col-12>
-<div text-center class="center">12 pontos</div>
+<div text-center class="center">{{avaliacao.pontos}} pontos</div>
 </ion-col>
 
 
@@ -69,32 +65,7 @@
     </div>
   </div>
 
-  <div class="booking-form card round" margin>
-    <div class="border-bottom" padding>
-      <h5>Avaliador: Sergio</h5>
 
-      <!--choose guest-->
-      <ion-grid class="filters" no-padding margin-top>
-        <ion-row>
-          <p>11 N. Way St, Madison, WI 53703</p>
-        </ion-row>
-
-      </ion-grid>
-    </div>
-    <div padding class="form-bottom">
-      <ion-grid class="filters" >
-<!--       <span ion-text color="dark" class="bold">{{ adults }} Adults</span> -->
-<ion-row>
-<ion-col col-12>
-<div text-center class="center">12 pontos</div>
-</ion-col>
-
-
-</ion-row>
-</ion-grid>
-      <div class="clear"></div>
-    </div>
-  </div>
 
   <!--description-->
 

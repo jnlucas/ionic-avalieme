@@ -37,6 +37,11 @@ export class LoginPage {
 
   // login and go to home page
   login() {
+
+  $(function(){
+    $("#btnLogin").html("<ion-icon name='log-in'></ion-icon>    CARREGANDO");
+    $("#msgErro").html("");
+ })
    var url = "http://api.14mob.com/profissional/"+this.cpf+"/api"
    var headers = new HttpHeaders();
    headers.append('Access-Control-Allow-Origin' , '*');
@@ -51,10 +56,17 @@ export class LoginPage {
      this.profProv.save(data,this.cpf);
      var teste = this.profProv.getDados().then((arrayOfResults) => {
 
-       
        this.nav.setRoot(TripsPage);
      });
+   }, err =>{
+     $(function(){
+       $("#msgErro").html("profissional não encontrado");
+       $("#btnLogin").html("<ion-icon name='log-in'></ion-icon>    ENTRAR");
+    })
    })
+
+
+
   }
 
 

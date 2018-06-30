@@ -18,23 +18,17 @@ export class TripsPage {
   score: Observable<any>;
 
 
-  constructor(public nav: NavController, public tripService: TripService,  public profProvider: ProfissionalProvider,public httpClient: HttpClient) {
+  constructor(public nav: NavController,
+    public tripService: TripService,
+    public profProvider: ProfissionalProvider,
+    public httpClient: HttpClient) {
     // set sample data
     this.trips = tripService.getAll();
     this.httpClient = httpClient
-
-
-
-
     this.profProvider.getDados().then((dados) => {
-
       this.carregaRanking(dados);
 
-
-
     });
-
-
 
   }
 
@@ -54,8 +48,6 @@ export class TripsPage {
 
       })
 
-
-
     });
 
   }
@@ -74,13 +66,9 @@ export class TripsPage {
 
     promisse.subscribe(data => {
         this.score = data;
-        //this.nav.setRoot(TripsPage,{score: this.score});
+
     });
 
-
-
   }
-
-
 
 }
