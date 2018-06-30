@@ -5,7 +5,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Keyboard } from '@ionic-native/keyboard';
 
-import { HomePage } from "../pages/home/home";
+
 import { LoginPage } from "../pages/login/login";
 import { TripsPage } from "../pages/trips/trips";
 import { TripDetailPage } from "../pages/trip-detail/trip-detail";
@@ -82,8 +82,8 @@ export class MyApp {
 
 
   carregaDados(){
-    console.log("PASSEI")
-  
+
+
   }
   logout() {
     this.nav.setRoot(LoginPage);

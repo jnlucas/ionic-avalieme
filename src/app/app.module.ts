@@ -19,7 +19,7 @@ import {WeatherProvider} from "../services/weather";
 
 import {MyApp} from "./app.component";
 
-import {HomePage} from "../pages/home/home";
+
 import {LoginPage} from "../pages/login/login";
 import {TripDetailPage} from "../pages/trip-detail/trip-detail";
 import {TripsPage} from "../pages/trips/trips";
@@ -35,7 +35,7 @@ import { ProfissionalProvider } from '../providers/profissional/profissional';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
+    
     LoginPage,
     TripDetailPage,
     TripsPage
@@ -53,13 +53,13 @@ import { ProfissionalProvider } from '../providers/profissional/profissional';
       name: 'avalieme',
         driverOrder: ['indexeddb', 'sqlite', 'websql']
     }),
-    
+
 
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
+
     LoginPage,
     TripDetailPage,
     TripsPage

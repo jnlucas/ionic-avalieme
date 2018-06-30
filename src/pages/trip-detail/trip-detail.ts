@@ -21,7 +21,7 @@ export class TripDetailPage {
   public avaliacoes: Observable<any>;
 
   // number of children
-  public children = 0;
+
   public trips: any;
   profProvider: ProfissionalProvider
   httpClient: HttpClient
