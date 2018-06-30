@@ -40,7 +40,9 @@ export class MyApp {
 
     this.appMenuItems = [
       {title: 'Ranking', component: TripsPage, icon: 'ios-paper'},
-      {title: 'Avaliações', component: TripDetailPage, icon: 'ios-pricetags'}
+      {title: 'Avaliações', component: TripDetailPage, icon: 'ios-pricetags'},
+      {title: 'Sair', component: LoginPage, icon: 'ios-exit'}
+
 
     ];
   }

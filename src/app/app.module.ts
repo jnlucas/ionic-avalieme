@@ -1,5 +1,8 @@
-import {NgModule} from "@angular/core";
-import {IonicApp, IonicModule} from "ionic-angular";
+import {IonicApp, IonicErrorHandler, IonicModule} from "ionic-angular";
+
+import { ErrorHandler, NgModule } from '@angular/core';
+
+
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import {IonicStorageModule} from '@ionic/storage';
@@ -18,6 +21,7 @@ import {HomePage} from "../pages/home/home";
 import {LoginPage} from "../pages/login/login";
 import {TripDetailPage} from "../pages/trip-detail/trip-detail";
 import {TripsPage} from "../pages/trips/trips";
+import { ProfissionalProvider } from '../providers/profissional/profissional';
 
 // import services
 // end import services
@@ -61,7 +65,9 @@ import {TripsPage} from "../pages/trips/trips";
     Keyboard,
     ActivityService,
     TripService,
-    WeatherProvider
+    WeatherProvider,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ProfissionalProvider
   ]
 })
 
