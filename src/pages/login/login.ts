@@ -3,7 +3,8 @@ import {NavController, AlertController, ToastController, MenuController} from "i
 import {HomePage} from "../home/home";
 import {TripsPage} from "../trips/trips";
 import { ProfissionalProvider } from '../../providers/profissional/profissional';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient ,HttpHeaders} from '@angular/common/http';
+
 import { Observable } from 'rxjs/Observable';
 
 
@@ -16,6 +17,7 @@ export class LoginPage {
 
   profissional: Observable<any>;
   httpClient: HttpClient;
+  profProv: ProfissionalProvider;
   urlLogin: String = "http://api.14mob.com/profissional/api";
 
 
@@ -26,7 +28,7 @@ export class LoginPage {
     public profProv: ProfissionalProvider,
     public httpClient: HttpClient) {
 
-
+    this.profProv = profProv;
 
     this.menu.swipeEnable(false);
   }
@@ -36,17 +38,38 @@ export class LoginPage {
   // login and go to home page
   login() {
 
-console.log(this.cpf)
 
- this.profissional = this.httpClient.get(this.urlLogin,{});
+
+   var url = "http://api.14mob.com/profissional/"+this.cpf+"/api"
+   var headers = new HttpHeaders();
+   headers.append('Access-Control-Allow-Origin' , '*');
+   headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
+   headers.append('Accept','application/json');
+   headers.append('content-type','application/json');
+
+   this.profissional = this.httpClient.get(url,{},{headers:headers});
+
    this.profissional
    .subscribe(data => {
-     console.log('my data: ', data);
+
+
+     this.profProv.save(data,this.cpf);
+
+
+     var teste = this.profProv.getDados().then((arrayOfResults) => {
+
+       this.nav.setRoot(TripsPage);
+
+     });
+
+
+
+
    })
 
-    //console.log(this.profissional)
 
-    this.nav.setRoot(TripsPage);
+
+
   }
 
 

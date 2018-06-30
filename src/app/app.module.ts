@@ -5,7 +5,9 @@ import { ErrorHandler, NgModule } from '@angular/core';
 
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
+
 import {IonicStorageModule} from '@ionic/storage';
+
 
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
@@ -41,6 +43,7 @@ import { ProfissionalProvider } from '../providers/profissional/profissional';
   imports: [
     BrowserModule,
     HttpClientModule,
+
     IonicModule.forRoot(MyApp, {
       scrollPadding: false,
       scrollAssist: true,
@@ -49,7 +52,9 @@ import { ProfissionalProvider } from '../providers/profissional/profissional';
     IonicStorageModule.forRoot({
       name: 'avalieme',
         driverOrder: ['indexeddb', 'sqlite', 'websql']
-    })
+    }),
+    
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -72,4 +77,7 @@ import { ProfissionalProvider } from '../providers/profissional/profissional';
 })
 
 export class AppModule {
+
+
+
 }

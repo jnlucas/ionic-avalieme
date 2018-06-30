@@ -39,7 +39,17 @@ export class HomePage {
     this.nav.push(TripsPage);
   }
 
+  carregaDados(){
+    this.profProvider.getDados().then((dados) => {
+      $(function(){
+        $("#foto-profissional").attr("src",dados.foto)
+        $(".nomeProfissional").html(dados.nome)
+        $(".emailProfissional").html(dados.email)
 
+
+      })
+    });
+  }
 
 
 }

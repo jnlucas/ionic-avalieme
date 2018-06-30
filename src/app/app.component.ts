@@ -10,6 +10,8 @@ import { LoginPage } from "../pages/login/login";
 import { TripsPage } from "../pages/trips/trips";
 import { TripDetailPage } from "../pages/trip-detail/trip-detail";
 
+import { ProfissionalProvider } from '../providers/profissional/profissional';
+
 
 
 
@@ -24,6 +26,9 @@ export interface MenuItem {
 })
 
 export class MyApp {
+
+  profProvider: ProfissionalProvider
+
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = LoginPage;
@@ -34,10 +39,13 @@ export class MyApp {
     public platform: Platform,
     public statusBar: StatusBar,
     public splashScreen: SplashScreen,
-    public keyboard: Keyboard
+    public keyboard: Keyboard,
+    public profProvider: ProfissionalProvider
+
   ) {
     this.initializeApp();
 
+    this.profProvider = profProvider
     this.appMenuItems = [
       {title: 'Ranking', component: TripsPage, icon: 'ios-paper'},
       {title: 'Avaliações', component: TripDetailPage, icon: 'ios-pricetags'},
@@ -65,11 +73,18 @@ export class MyApp {
   }
 
   openPage(page) {
+
+
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
 
+
+  carregaDados(){
+    console.log("PASSEI")
+  
+  }
   logout() {
     this.nav.setRoot(LoginPage);
   }
