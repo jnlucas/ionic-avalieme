@@ -25,6 +25,7 @@ import {TripDetailPage} from "../pages/trip-detail/trip-detail";
 import {TripsPage} from "../pages/trips/trips";
 import { ProfissionalProvider } from '../providers/profissional/profissional';
 
+
 // import services
 // end import services
 // end import services
@@ -35,7 +36,7 @@ import { ProfissionalProvider } from '../providers/profissional/profissional';
 @NgModule({
   declarations: [
     MyApp,
-    
+
     LoginPage,
     TripDetailPage,
     TripsPage
@@ -73,6 +74,7 @@ import { ProfissionalProvider } from '../providers/profissional/profissional';
     WeatherProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ProfissionalProvider
+
   ]
 })
 

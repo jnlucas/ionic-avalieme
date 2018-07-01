@@ -9,6 +9,8 @@ import { Keyboard } from '@ionic-native/keyboard';
 import { LoginPage } from "../pages/login/login";
 import { TripsPage } from "../pages/trips/trips";
 import { TripDetailPage } from "../pages/trip-detail/trip-detail";
+import { Push, PushObject, PushOptions } from '@ionic-native/push';
+
 
 import { ProfissionalProvider } from '../providers/profissional/profissional';
 
@@ -28,6 +30,7 @@ export interface MenuItem {
 export class MyApp {
 
   profProvider: ProfissionalProvider
+
 
   @ViewChild(Nav) nav: Nav;
 
@@ -53,6 +56,8 @@ export class MyApp {
 
 
     ];
+
+
   }
 
   initializeApp() {
@@ -69,8 +74,12 @@ export class MyApp {
 
       //*** Control Keyboard
       this.keyboard.disableScroll(true);
+
+
     });
   }
+
+
 
   openPage(page) {
 
