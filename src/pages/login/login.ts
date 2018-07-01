@@ -14,7 +14,7 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: 'login.html'
 })
 export class LoginPage {
-
+  cpf: string
   profissional: Observable<any>;
 
   urlLogin: String = "http://api.14mob.com/profissional/api";
@@ -38,25 +38,25 @@ export class LoginPage {
   login() {
 
 
-   var url = "http://api.14mob.com/profissional/"+this.cpf+"/api"
-   var headers = new HttpHeaders();
-   headers.append('Access-Control-Allow-Origin' , '*');
-   headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
-   headers.append('Accept','application/json');
-   headers.append('content-type','application/json');
+  if(this.cpf != null){
+    var url = "http://api.14mob.com/profissional/"+this.cpf+"/api"
+    var headers = new HttpHeaders();
+    headers.append('Access-Control-Allow-Origin' , '*');
+    headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
+    headers.append('Accept','application/json');
+    headers.append('content-type','application/json');
 
-   this.profissional = this.httpClient.get(url,{},{headers:headers});
+     this.httpClient.get(url,{},{headers:headers}).subscribe(data => {
+      this.profProv.save(data,this.cpf);
+      this.profProv.getDados().then((arrayOfResults) => {
 
-   this.profissional
-   .subscribe(data => {
-     this.profProv.save(data,this.cpf);
-     var teste = this.profProv.getDados().then((arrayOfResults) => {
+        this.nav.setRoot(TripsPage);
+      });
+    }, err =>{
 
-       this.nav.setRoot(TripsPage);
-     });
-   }, err =>{
-     
-   })
+    })
+  }
+
 
 
 

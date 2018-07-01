@@ -3,6 +3,10 @@ import {NavController} from "ionic-angular";
 import {TripService} from "../../services/trip-service";
 import {TripDetailPage} from "../trip-detail/trip-detail";
 import { ProfissionalProvider } from '../../providers/profissional/profissional';
+import { Profissional } from '../../models/profissional';
+import { Score } from '../../models/score';
+
+
 import { HttpClient ,HttpHeaders} from '@angular/common/http';
 
 import { Observable } from 'rxjs/Observable';
@@ -15,8 +19,8 @@ export class TripsPage {
   // list of trips
   public trips: any;
 
-  dadosProfissional: Observable<any>
-  score: Observable<any>;
+  dadosProfissional: Profissional
+  score: Score[];
 
 
   constructor(public nav: NavController,
@@ -44,7 +48,7 @@ export class TripsPage {
 
     this.profProvider.getDados().then((dados) => {
 
-      
+
 
     });
 
@@ -60,9 +64,7 @@ export class TripsPage {
     headers.append('Accept','application/json');
     headers.append('content-type','application/json');
 
-    var promisse = this.httpClient.get(url,{},{headers:headers});
-
-    promisse.subscribe(data => {
+     this.httpClient.get(url,{},{headers:headers}).subscribe(data => {
         this.score = data;
 
     });

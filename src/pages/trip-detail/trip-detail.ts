@@ -4,6 +4,7 @@ import {TripService} from "../../services/trip-service";
 import { ProfissionalProvider } from '../../providers/profissional/profissional';
 
 import { HttpClient ,HttpHeaders} from '@angular/common/http';
+import { Avaliacao } from '../../models/avaliacao';
 
 import { Observable } from 'rxjs/Observable';
 
@@ -15,10 +16,9 @@ export class TripDetailPage {
   // trip info
   public trip: any;
   // number of adult
-  public profissional: Observable<any>;
   public profissionalNome: Observable<any>;
 
-  public avaliacoes: Observable<any>;
+  public avaliacoes: Avaliacao[];
 
   // number of children
 
@@ -47,7 +47,7 @@ export class TripDetailPage {
 
   carregaDados(){
     this.profProvider.getDados().then((dados) => {
-      
+
     });
   }
 
@@ -62,9 +62,7 @@ export class TripDetailPage {
     headers.append('Accept','application/json');
     headers.append('content-type','application/json');
 
-    var promisse = this.httpClient.get(url,{},{headers:headers});
-
-    promisse.subscribe(data => {
+     this.httpClient.get(url,{},{headers:headers}).subscribe(data => {
         this.avaliacoes = data;
 
     });

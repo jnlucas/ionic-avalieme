@@ -10,10 +10,10 @@ import { LoginPage } from "../pages/login/login";
 import { TripsPage } from "../pages/trips/trips";
 import { TripDetailPage } from "../pages/trip-detail/trip-detail";
 
-
-
 import { ProfissionalProvider } from '../providers/profissional/profissional';
+import { Profissional } from '../models/profissional';
 import { Observable } from 'rxjs/Observable';
+
 
 
 
@@ -31,7 +31,7 @@ export interface MenuItem {
 export class MyApp {
 
 
-dadosProfissional: Observable<any>
+dadosProfissional: Profissional
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = LoginPage;
@@ -50,7 +50,7 @@ dadosProfissional: Observable<any>
 
     this.profProvider.getDados().then((dados) => {
       this.dadosProfissional = dados;
-
+      console.log(this.dadosProfissional)
 
 
     });

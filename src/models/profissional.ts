@@ -1,22 +1,27 @@
 export class Profissional {
-  id: number;
-  tipo: string;
+  profissionalId: number;
   nome: string;
-  data: Date;
-  valor: number;
+  email: string;
+  cpf: string;
+  foto: string;
+  meta: number;
+
 
   constructor(
-    id: number,
-  tipo: string,
-  nome: string,
-  data: Date,
-  valor: number
+    profissionalId: number,
+    nome: string,
+    email: string,
+    cpf: string,
+    foto: string,
+    meta: number
   )
   {
-    this.id = id;
-    this.tipo = tipo;
-    this.nome = nome;
-    this.data = data;
-    this.valor = valor;
+    this.profissionalId = profissionalId
+    this.nome = nome
+    this.email = email
+    this.cpf = cpf
+    this.foto = foto
+    this.meta = meta
+
   }
 }
