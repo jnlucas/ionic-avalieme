@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 import {NavController, AlertController, ToastController, MenuController} from "ionic-angular";
-import {HomePage} from "../home/home";
+
 import {TripsPage} from "../trips/trips";
 import { ProfissionalProvider } from '../../providers/profissional/profissional';
 import { HttpClient ,HttpHeaders} from '@angular/common/http';
