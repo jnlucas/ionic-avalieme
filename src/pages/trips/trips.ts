@@ -20,7 +20,7 @@ export class TripsPage {
   public trips: any;
 
   dadosProfissional: Profissional
-  score: Score[];
+  score: any ;
 
 
   constructor(public nav: NavController,
@@ -64,7 +64,7 @@ export class TripsPage {
     headers.append('Accept','application/json');
     headers.append('content-type','application/json');
 
-    this.httpClient.get(url,{},{headers:headers}).subscribe(data => {
+    this.httpClient.get(url,{headers:headers}).subscribe(data => {
         this.score = data;
 
     },

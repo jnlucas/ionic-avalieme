@@ -18,7 +18,7 @@ export class TripDetailPage {
   // number of adult
   public profissionalNome: Observable<any>;
 
-  public avaliacoes: Avaliacao[];
+  public avaliacoes: any;
 
   // number of children
 
@@ -62,7 +62,7 @@ export class TripDetailPage {
     headers.append('Accept','application/json');
     headers.append('content-type','application/json');
 
-      this.httpClient.get(url,{},{headers:headers}).subscribe(data => {
+      this.httpClient.get(url,{headers:headers}).subscribe(data => {
          this.avaliacoes = data;
 
 

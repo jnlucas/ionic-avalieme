@@ -46,7 +46,7 @@ export class LoginPage {
     headers.append('Accept','application/json');
     headers.append('content-type','application/json');
 
-     this.httpClient.get(url,{},{headers:headers}).subscribe(data => {
+     this.httpClient.get(url,{headers:headers}).subscribe(data => {
       this.profProv.save(data,this.cpf);
       this.profProv.getDados().then((arrayOfResults) => {
 
