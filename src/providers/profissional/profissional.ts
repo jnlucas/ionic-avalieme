@@ -14,11 +14,10 @@ import {Storage} from '@ionic/storage';
 @Injectable()
 export class ProfissionalProvider {
 
- storage: Storage
+
 
   constructor(private storage: Storage) {
-    this.storage = storage
-
+    
 
   }
 

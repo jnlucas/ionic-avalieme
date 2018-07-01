@@ -23,8 +23,7 @@ export class TripDetailPage {
   // number of children
 
   public trips: any;
-  profProvider: ProfissionalProvider
-  httpClient: HttpClient
+
 
   constructor(public nav: NavController,
     public tripService: TripService,
@@ -33,9 +32,7 @@ export class TripDetailPage {
     // set sample data
     this.trip = tripService.getItem(1);
     this.trips = tripService.getAll();
-    this.httpClient = httpClient
 
-    this.profProvider = profProvider;
 
     this.profProvider.getDados().then((dados) => {
 
@@ -50,13 +47,7 @@ export class TripDetailPage {
 
   carregaDados(){
     this.profProvider.getDados().then((dados) => {
-      $(function(){
-        $("#foto-profissional").attr("src",dados.foto)
-        $(".nomeProfissional").html(dados.nome)
-        $(".emailProfissional").html(dados.email)
-
-
-      })
+      
     });
   }
 

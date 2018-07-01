@@ -6,14 +6,14 @@
         <ion-row>
           <ion-col col-4>
               <div class="user-avatar">
-                <img src="" id="foto-profissional">
+                <img *ngIf=" dadosProfissional != null" src="{{dadosProfissional.foto}}" id="foto-profissional">
               </div>
           </ion-col>
           <ion-col padding-top col-8>
-            <h2 ion-text class="no-margin bold text-white nomeProfissional">
-              João Firmino
+            <h2 ion-text class="no-margin bold text-white nomeProfissional" *ngIf=" dadosProfissional != null">
+              {{dadosProfissional.nome}}
             </h2>
-            <span ion-text color="light" class="emailProfissional">cargo</span>
+            <span ion-text color="light" class="emailProfissional" *ngIf=" dadosProfissional != null">{{dadosProfissional.email}}</span>
           </ion-col>
         </ion-row>
 

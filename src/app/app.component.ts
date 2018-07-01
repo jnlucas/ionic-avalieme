@@ -9,10 +9,11 @@ import { Keyboard } from '@ionic-native/keyboard';
 import { LoginPage } from "../pages/login/login";
 import { TripsPage } from "../pages/trips/trips";
 import { TripDetailPage } from "../pages/trip-detail/trip-detail";
-import { Push, PushObject, PushOptions } from '@ionic-native/push';
+
 
 
 import { ProfissionalProvider } from '../providers/profissional/profissional';
+import { Observable } from 'rxjs/Observable';
 
 
 
@@ -29,9 +30,8 @@ export interface MenuItem {
 
 export class MyApp {
 
-  profProvider: ProfissionalProvider
 
-
+dadosProfissional: Observable<any>
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = LoginPage;
@@ -48,7 +48,12 @@ export class MyApp {
   ) {
     this.initializeApp();
 
-    this.profProvider = profProvider
+    this.profProvider.getDados().then((dados) => {
+      this.dadosProfissional = dados;
+
+
+
+    });
     this.appMenuItems = [
       {title: 'Ranking', component: TripsPage, icon: 'ios-paper'},
       {title: 'Avaliações', component: TripDetailPage, icon: 'ios-pricetags'},

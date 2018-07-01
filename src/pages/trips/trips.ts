@@ -14,7 +14,8 @@ import { Observable } from 'rxjs/Observable';
 export class TripsPage {
   // list of trips
   public trips: any;
-  profProvider: ProfissionalProvider
+
+  dadosProfissional: Observable<any>
   score: Observable<any>;
 
 
@@ -24,8 +25,10 @@ export class TripsPage {
     public httpClient: HttpClient) {
     // set sample data
     this.trips = tripService.getAll();
-    this.httpClient = httpClient
+
     this.profProvider.getDados().then((dados) => {
+      this.dadosProfissional = dados;
+
       this.carregaRanking(dados);
 
     });
@@ -41,12 +44,7 @@ export class TripsPage {
 
     this.profProvider.getDados().then((dados) => {
 
-      $(function(){
-        $("#foto-profissional").attr("src",dados.foto)
-        $(".nomeProfissional").html(dados.nome)
-        $(".emailProfissional").html(dados.email)
-
-      })
+      
 
     });
 
