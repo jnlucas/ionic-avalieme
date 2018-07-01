@@ -4,7 +4,7 @@ import {TripService} from "../../services/trip-service";
 import {TripDetailPage} from "../trip-detail/trip-detail";
 import { ProfissionalProvider } from '../../providers/profissional/profissional';
 import { Profissional } from '../../models/profissional';
-import { Score } from '../../models/score';
+
 
 
 import { HttpClient ,HttpHeaders} from '@angular/common/http';

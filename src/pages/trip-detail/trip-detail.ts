@@ -4,7 +4,6 @@ import {TripService} from "../../services/trip-service";
 import { ProfissionalProvider } from '../../providers/profissional/profissional';
 
 import { HttpClient ,HttpHeaders} from '@angular/common/http';
-import { Avaliacao } from '../../models/avaliacao';
 
 import { Observable } from 'rxjs/Observable';
 

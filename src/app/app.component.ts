@@ -12,7 +12,7 @@ import { TripDetailPage } from "../pages/trip-detail/trip-detail";
 
 import { ProfissionalProvider } from '../providers/profissional/profissional';
 import { Profissional } from '../models/profissional';
-import { Observable } from 'rxjs/Observable';
+
 
 
 
