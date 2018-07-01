@@ -9,7 +9,7 @@ import { Score } from '../../models/score';
 
 import { HttpClient ,HttpHeaders} from '@angular/common/http';
 
-import { Observable } from 'rxjs/Observable';
+
 
 @Component({
   selector: 'page-trips',
@@ -64,8 +64,11 @@ export class TripsPage {
     headers.append('Accept','application/json');
     headers.append('content-type','application/json');
 
-     this.httpClient.get(url,{},{headers:headers}).subscribe(data => {
+    this.httpClient.get(url,{},{headers:headers}).subscribe(data => {
         this.score = data;
+
+    },
+    err => {
 
     });
 

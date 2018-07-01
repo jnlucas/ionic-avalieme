@@ -62,10 +62,16 @@ export class TripDetailPage {
     headers.append('Accept','application/json');
     headers.append('content-type','application/json');
 
-     this.httpClient.get(url,{},{headers:headers}).subscribe(data => {
-        this.avaliacoes = data;
+      this.httpClient.get(url,{},{headers:headers}).subscribe(data => {
+         this.avaliacoes = data;
 
-    });
+
+     },
+     err => {
+
+     });
+
+
 
   }
 }
